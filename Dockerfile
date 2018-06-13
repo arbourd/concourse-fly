@@ -1,3 +1,5 @@
+FROM concourse/concourse:latest as cache
+
 FROM alpine:edge as downloader
 RUN apk add --no-cache curl jq
 RUN url=$(curl -s "https://api.github.com/repos/concourse/concourse/releases/latest" \
